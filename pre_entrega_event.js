@@ -53,28 +53,6 @@ const objPromos = {
 
 
 
-// const opcionesCafeteria = [
-//     "0) Café c/s leche doble $120 \n" +
-//     "1) Matecocido o té, $100 \n" +
-//     "2) Capuccino $140 \n" +
-//     "3) Medialunas dulces/saladas $80 c/u \n" +
-//     "4) Tostado $300 \n" +
-//     "5) Carlito común $350 \n" +
-//     "6) Carlito especial $450 \n" +
-//     "7) Volver atrás."
-// ]
-
-
-
-
-
-// const promosOpciones = [
-//     "0) Café con leche + 2 medialunas $220 \n" +
-//     "1) Café con leche + tostadas de campo $300 \n" +
-//     "2) Café con leche + tostado + jugo de naranja $390 \n" +
-//     "3) Volver atrás."
-// ];   
-
 
 
 
