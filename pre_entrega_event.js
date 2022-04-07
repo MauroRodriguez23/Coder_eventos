@@ -12,16 +12,16 @@ ingreso();
             // OBJETOS DE CAFETERIA //
 
 const objCafeteria = {
-    cafe: "Café c/s leche doble $120 \n" ,
-    precioCafe: 120,
+    cafe: "Café c/s leche doble $120 \n",
+    precioCafe: 120, 
 
-    matecocido: "Matecocido o té, $100 \n",
+    matecocido: "Matecocido o té, $100 \n", 
     precioMatecocido: 100,
 
-    capuccino:  "Capuccino $140 \n",
-    precioCapuccino: 140,
+    capuccino:  "Capuccino $140 \n", 
+    precioCapuccino: 140 ,
     
-    medialunas: "Medialunas dulces/saladas $80 c/u \n",
+    medialunas: "Medialunas dulces/saladas $80 c/u \n", 
     precioMedialunas: 80,
     
     tostado:     "Tostado $300 \n",
@@ -34,6 +34,9 @@ const objCafeteria = {
     precioCarlitoEspecial: 450
             
 }
+
+
+
 
         // OBJETOS DE PROMOS //
 
@@ -57,7 +60,11 @@ const objPromos = {
 
 
 const resultadoPedidos = [];
-const resultadoPromos = [];
+const reducer = (acculator, curr) => acculator + curr;
+
+
+
+
 
 let preguntasPrimeras = document.getElementById("preguntas_primeras")
     preguntasPrimeras.innerHTML = "Por favor de las siguientes opciones elegir lo que desea hacer";
@@ -67,6 +74,8 @@ let preguntasPrimeras = document.getElementById("preguntas_primeras")
         // CLICK CAFETERIA //
     let ver_cafeteria = document.getElementById("ver_cafeteria");
     ver_cafeteria.addEventListener("click", pulsaCafeteria)
+
+
 
 function pulsaCafeteria (){
     document.getElementById("cafeteria").style.display = 'flex';
@@ -80,16 +89,21 @@ function pulsaCafeteria (){
         let btn_cafe = document.getElementById("cafe");
         btn_cafe.addEventListener("click", clickCafe);
 
+
+     
         function clickCafe () {
-         resultadoPedidos.push(objCafeteria.cafe);
+  
+            resultadoPedidos.push(objCafeteria.precioCafe)
+         
         }       
+       
 
         // CLICK MATECOCIDO //
         let btn_matecocido = document.getElementById("matecocido");
         btn_matecocido.addEventListener("click", clickMatecocido);
 
         function clickMatecocido() {
-            resultadoPedidos.push(objCafeteria.matecocido);
+            resultadoPedidos.push(objCafeteria.precioMatecocido);
         }
 
         // CLICK CAPUCCINO //
@@ -97,7 +111,7 @@ function pulsaCafeteria (){
         btn_capuccino.addEventListener("click", clickCapuccino);
 
         function clickCapuccino(){
-            resultadoPedidos.push(objCafeteria.capuccino);
+            resultadoPedidos.push(objCafeteria.precioCapuccino);
         }
 
         // CLICK MEDIALUNAS //
@@ -105,7 +119,7 @@ function pulsaCafeteria (){
         btn_medialunas.addEventListener("click", clickMedialunas);
 
         function clickMedialunas() {
-            resultadoPedidos.push(objCafeteria.medialunas);
+            resultadoPedidos.push(objCafeteria.precioMedialunas);
         }
 
         // TOSTADO //
@@ -113,7 +127,7 @@ function pulsaCafeteria (){
         btn_tostado.addEventListener("click", clickTostado);
 
         function clickTostado() {
-            resultadoPedidos.push(objCafeteria.tostado);
+            resultadoPedidos.push(objCafeteria.precioTostado);
         }
 
         // CARLITO COMUN //
@@ -121,7 +135,7 @@ function pulsaCafeteria (){
         btn_calrlito_cm.addEventListener("click", clickCarlitoCm);
 
         function clickCarlitoCm() {
-            resultadoPedidos.push(objCafeteria.carlitoComun);
+            resultadoPedidos.push(objCafeteria.precioCarlitoComun);
         }
 
         // CARLITO ESPECIAL //
@@ -129,7 +143,7 @@ function pulsaCafeteria (){
         btn_carlito_esp.addEventListener("click", clickCarlitoEsp);
 
         function clickCarlitoEsp() {
-            resultadoPedidos.push(objCafeteria.carlitoEspecial);
+            resultadoPedidos.push(objCafeteria.precioCarlitoEspecial);
         }
 
 
@@ -151,7 +165,7 @@ function pulsaCafeteria (){
        btn_prom1.addEventListener("click", clickProm1);
        
        function clickProm1() {
-        resultadoPedidos.push(objPromos.prom0);
+        resultadoPedidos.push(objPromos.precioProm0);
        }
 
         // CLICK PROMO 2 //
@@ -159,7 +173,7 @@ function pulsaCafeteria (){
         btn_prom2.addEventListener("click", clickProm2);
         
         function clickProm2() {
-            resultadoPedidos.push(objPromos.prom1);
+            resultadoPedidos.push(objPromos.precioProm1);
         }
  
 
@@ -168,17 +182,23 @@ function pulsaCafeteria (){
        btn_prom3.addEventListener("click", clickProm3);
        
        function clickProm3() {
-        resultadoPedidos.push(objPromos.prom2);
+        resultadoPedidos.push(objPromos.precioProm2);
        }
 
 
 
         // VOLVER ATRAS //
 
-        function volverAtras (){
+        function volverAtras() {
             document.getElementById("menu").style.display = 'flex';
+            
             document.getElementById("cafeteria").style.display = 'none';
             document.getElementById("promos").style.display = 'none';
+            document.getElementById("carrito").style.display = 'none';
+            document.getElementById("total_es").style.display = 'none';
+            
+
+           
         }
         
 
@@ -188,11 +208,27 @@ function pulsaCafeteria (){
         btn_carrito.addEventListener("click", carrito);
 
         function carrito() {
+            document.getElementById("menu").style.display = 'none';
+            document.getElementById("compro").style.display = 'flex';
+            document.getElementById("carrito").style.display = 'flex';
+            document.getElementById("total_es").style.display = 'flex';
+
+            document.getElementById("preguntas_primeras").style.display = 'none';
+           
             
-            alert(resultadoPedidos);   
+          
+           let imprime = document.getElementById("compro");
+       
+          
+
+           let fraseTotal = document.getElementById("total_es");
+           fraseTotal.innerText = "Este es el total";
+           imprime.innerText = resultadoPedidos.reduce(reducer);   
+            
         }
 
-     
+      
+
 
 
 

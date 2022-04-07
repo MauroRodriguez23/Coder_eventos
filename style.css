@@ -11,7 +11,8 @@ body {
     justify-content: center;
     align-items: center;
  
-    background-color: rgb(104, 88, 69);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 37%, rgba(0,255,188,1) 76%);
   
 }
 
@@ -23,13 +24,18 @@ body {
     text-transform: uppercase;
     position: relative;
     top: -200px;
+    
 }
 
     /* MENU GENERAL DE LA CARTA */
 #menu {
     display: flex;
     flex-direction: column;
-    
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 37%, rgba(0,255,188,1) 76%);
+
+    padding: 15px;
+   
     
 }
 
@@ -42,6 +48,8 @@ body {
     background: black;
     color: bisque;
     transition: 300ms all;
+    border: 1px solid rgba(101, 221, 189, 0.815);
+   
 }
 
 
@@ -50,6 +58,7 @@ body {
     background: rgb(13, 13, 102);
     color: white;
     cursor: pointer;
+    
 }
 
 #ver_promos:hover {
@@ -72,14 +81,22 @@ body {
       
       display: flex;
       flex-direction: column;
-      padding: 10px;
+    
       
       animation: cafeteria;
       animation-duration: 300ms;
       animation-timing-function: linear;
        
+
+      background: rgb(2,0,36);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 37%, rgba(0,255,188,1) 76%);
+  
+      padding: 15px;
+
       display: none;
      
+
+
   }
 
 @keyframes cafeteria {
@@ -105,6 +122,8 @@ body {
 }
 
 
+
+
   #cafeteria button {
       padding: 10px;
       background: black;
@@ -113,7 +132,11 @@ body {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       letter-spacing: 2px;
       font-size: 22px;
+
+      border: 1px solid rgba(101, 221, 189, 0.815);
   }
+  
+
 
   #cafeteria button:hover {
     background: rgb(13, 13, 102);
@@ -121,6 +144,10 @@ body {
     cursor: pointer;
   }
 
+  #cafeteria button:focus {
+    background: rgb(63, 189, 63);
+    color: black;
+}
 
     /* MENU PROMOS */
 
@@ -128,12 +155,17 @@ body {
       
         display: flex;
         flex-direction: column;
-        padding: 10px;
+     
 
         animation: cafeteria;
         animation-duration: 300ms;
         animation-timing-function: linear;
        
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 37%, rgba(0,255,188,1) 76%);
+    
+        padding: 15px;
+  
 
           display: none;
        
@@ -172,6 +204,7 @@ body {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         letter-spacing: 2px;
         font-size: 22px;
+        border: 1px solid rgba(101, 221, 189, 0.815);
     }
   
     #promos button:hover {
@@ -180,15 +213,99 @@ body {
       cursor: pointer;
     }
   
+    #promos button:focus {
+        background: rgb(63, 189, 63);
+        color: black;
+    }
 
 
    /* COMPRO */
 
-   #compro {
-       border: solid 1px red;
+   #carrito{
+     
        display: flex;
        justify-content: center;
        align-items: center;
        height: 500px;
-       display: none;
+
+       
+       background: rgb(2,0,36);
+       box-shadow: 0px 0px 0px 1px #ccc;
+       font-size: 25px;
+       padding: 15px;
+ 
+        display: none;
+   }
+
+   #compro {
+      
+       color: white;
+       letter-spacing: 4px;
+       padding: 30px;
+       box-shadow: 1px 1px 0px 1px #ccc;
+
+       
+        color: bisque;
+        
+        letter-spacing: 2px;
+        font-size: 22px;
+   
+        display: none;
+   }
+
+
+
+   #carrito button {
+    padding: 10px;
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    color: bisque;
+    background: black;
+    border: 1px solid rgba(101, 221, 189, 0.815);
+   }
+
+
+            /* SCROLL PARA MÁS ADELANTE */
+
+            /*    
+            #carrito {
+                word-wrap: break-word;
+                overflow: auto;
+            }
+
+
+            #carrito::-webkit-scrollbar {
+                width:17px;
+            }
+
+            #carrito::-webkit-scrollbar-thumb {
+                background: wheat;
+            } */
+
+  
+   .carrito_volver {
+      position: absolute;
+      top: 800px;
+   }
+
+   .carrito_volver:hover {
+       cursor: pointer;
+   }
+
+
+
+
+   /* TOTAL */ 
+
+   #total_es {
+    position: relative;
+    top: -50px;
+
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    color: bisque;
+    display: none;
    }
